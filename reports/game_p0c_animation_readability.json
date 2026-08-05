@@ -1,0 +1,94 @@
+{
+  "task_id": "GAME-P0C",
+  "title": "Character & Combat Animation Readability",
+  "result": "PASS",
+  "implementation": {
+    "renderer": "Phaser Graphics procedural base fighter",
+    "palettes": {
+      "player": "cyan/teal",
+      "ai": "magenta"
+    },
+    "poses": [
+      "idle",
+      "move",
+      "respawn",
+      "lightWindup",
+      "lightActive",
+      "lightRecovery",
+      "heavyWindup",
+      "heavyHold",
+      "heavyActive",
+      "heavyRecovery",
+      "parryStartup",
+      "parryActive",
+      "parryRecovery",
+      "parrySuccess",
+      "dodge",
+      "hitstun",
+      "parried",
+      "dead"
+    ],
+    "attack_model": "fixed-tick swept weapon arc",
+    "render_callback_damage": false,
+    "per_attack_target_deduplication": true
+  },
+  "contracts": {
+    "fixed_hz": 60,
+    "parry_active_ticks": 3,
+    "parried_attacker_stun_ticks": 24,
+    "dodge_invulnerable_ticks": 8,
+    "dodge_charges": 2,
+    "dodge_recharge_ticks": 90
+  },
+  "attacks": {
+    "light": {
+      "startup": 12,
+      "active": 4,
+      "recovery": 16,
+      "sweep_degrees": [
+        -72,
+        66
+      ]
+    },
+    "heavy": {
+      "startup": 24,
+      "optional_delay": 8,
+      "active": 6,
+      "recovery": 24,
+      "sweep_degrees": [
+        -98,
+        96
+      ]
+    }
+  },
+  "verification": {
+    "tests": "17/17 PASS",
+    "motion_tests": "8/8 PASS",
+    "game_p0a_regression": "9/9 PASS",
+    "lint": "PASS",
+    "production_build": "PASS",
+    "git_diff_check": "PASS",
+    "front_sweep_hit": "PASS",
+    "side_rear_range_miss": "PASS",
+    "visual_simulation_tip_alignment": "PASS",
+    "contact_hit_parry_tick_alignment": "PASS",
+    "delayed_heavy_contact_shift": "8 ticks PASS",
+    "duplicate_hit_prevention": "PASS",
+    "restart_animation_fx_reset": "PASS",
+    "render_batch_determinism": "PASS",
+    "final_fixed_replay_ms": 2.49,
+    "production_bundle_kb": 1229.5,
+    "production_bundle_gzip_kb": 339.47
+  },
+  "browser": {
+    "automation": "NOT_OBSERVED",
+    "human_manual_readability": "NOT_OBSERVED",
+    "fps": "NOT_MEASURED",
+    "frame_time": "NOT_MEASURED",
+    "owner_task": "GAME-P0B",
+    "blocker_preserved": "WINDOWS_SANDBOX_ACL"
+  },
+  "protected_game_p0a_evidence_sha256": "F7E7F13CCF1A5745C09F0E098833AE4397AA1D2F58B53891C9D5EE17F01BA6C8",
+  "followup_task_prepared": "GAME-P0D",
+  "followup_executed": false
+}

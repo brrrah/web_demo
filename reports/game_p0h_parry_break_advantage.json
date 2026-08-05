@@ -1,0 +1,45 @@
+{
+  "task_id": "GAME-P0H",
+  "title": "Parry Break Advantage Tuning",
+  "authorization": "Direct user request to increase successful-parry reward with approximately one second of opponent action lock or immobility.",
+  "result": "PASS",
+  "implementation": {
+    "fixed_hz": 60,
+    "parry_active_ticks": 3,
+    "attacker_break_ticks": 60,
+    "attacker_break_seconds": 1.0,
+    "recoil_ticks": 6,
+    "post_recoil_velocity": "zero",
+    "blocked_during_break": ["movement", "light attack", "heavy attack", "dodge", "ground dash", "feint", "parry"],
+    "defender_counter_recovery_ticks": 6,
+    "heavy_counter_fits_before_unlock": true,
+    "world_ui": "PARRY BREAK remaining seconds above affected fighter",
+    "f3_ui": "remaining PARRY BREAK fixed ticks for player and AI",
+    "parry_window_widened": false
+  },
+  "verification": {
+    "tests": "61/61 PASS",
+    "prior_regression": "57/57 PASS",
+    "new_parry_break_tests": "4/4 PASS",
+    "sixty_tick_action_lock": "PASS",
+    "six_tick_recoil_then_position_lock": "PASS",
+    "heavy_counter_advantage": "PASS",
+    "render_batch_determinism": "PASS",
+    "restart_reset": "PASS",
+    "lint": "PASS",
+    "production_build": "PASS",
+    "production_http_status": 200,
+    "production_asset": "assets/index-Dt_27uFd.js",
+    "served_bundle_contains_parry_break_marker": true,
+    "git_diff_check": "PASS",
+    "staged_files": 0
+  },
+  "browser": {
+    "production_http": "OBSERVED_200",
+    "manual_gameplay": "NOT_OBSERVED",
+    "fps": "NOT_MEASURED"
+  },
+  "protected_game_p0g_evidence_sha256": "D86E7DADBF75429DD44699E9D3CE0FD32F4A66FC431CB296821A79DC831A7775",
+  "followup_task_prepared": null,
+  "followup_executed": false
+}

@@ -1,0 +1,47 @@
+{
+  "task_id": "GAME-P0B",
+  "result": "BLOCKED",
+  "production_preview": {
+    "url": "http://127.0.0.1:4174/",
+    "http_status": 200,
+    "browser_loaded": false
+  },
+  "browser_environment": {
+    "requested_surface": "in-app browser selected for local URL",
+    "result": "UNAVAILABLE",
+    "error": "windows sandbox failed: helper_unknown_error: apply deny-read ACLs",
+    "attempt_count_this_task": 1
+  },
+  "automated_verification": {
+    "game_p0a_regression": "9/9 PASS",
+    "lint": "PASS",
+    "production_build": "PASS",
+    "bundle_js_kb": 1222.48,
+    "bundle_gzip_kb": 337.31,
+    "git_diff_check": "PASS",
+    "production_http": "PASS"
+  },
+  "interactive_verification": {
+    "canvas_render": "NOT_OBSERVED",
+    "keyboard_mouse": "NOT_OBSERVED",
+    "pointer_coordinates": "NOT_OBSERVED",
+    "focus_loss_return": "NOT_OBSERVED",
+    "twenty_second_flow": "NOT_OBSERVED",
+    "parry_counter": "NOT_OBSERVED",
+    "spam_balance": "NOT_OBSERVED",
+    "restart_ten_times": "NOT_OBSERVED",
+    "fps": "NOT_MEASURED",
+    "average_frame_ms": "NOT_MEASURED",
+    "max_frame_ms": "NOT_MEASURED",
+    "fixed_tick_backlog": "NOT_MEASURED"
+  },
+  "changes": {
+    "combat_timing_changed": false,
+    "focus_input_reset_added": true,
+    "backlog_metrics_added": true,
+    "attack_telegraph_readability_added": true
+  },
+  "protected_game_p0a_evidence_sha256": "F7E7F13CCF1A5745C09F0E098833AE4397AA1D2F58B53891C9D5EE17F01BA6C8",
+  "followup_task_created": false,
+  "blocker": "Required actual-browser completion gates cannot be observed because browser control cannot start in this Windows sandbox."
+}

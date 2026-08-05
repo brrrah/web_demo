@@ -1,0 +1,69 @@
+{
+  "task_id": "GAME-P0J",
+  "title": "Movement Acceleration & Parry Visibility",
+  "authorization": "Direct user feedback that movement should be faster and the zoomed-out character made parry timing harder to read.",
+  "result": "PASS",
+  "implementation": {
+    "movement": {
+      "speed_xy": [5.2, 4.4],
+      "acceleration": 5.8,
+      "deceleration": 3.4,
+      "ground_dash_speed": 13.2,
+      "ground_dash_ticks": 6,
+      "ground_dash_distance": 79.2,
+      "roll_speed": 9.0
+    },
+    "parry_readability": {
+      "parry_window_ticks": 3,
+      "parry_window_widened": false,
+      "windup_badge": "fixed-screen-size WINDUP above enemy",
+      "countdown_sequence": ["6", "5", "4", "READY 3", "READY 2", "LMB!"],
+      "countdown_screen_space": true,
+      "countdown_font_px": 26,
+      "ring_start_radius": 70,
+      "ring_end_radius": 24,
+      "ring_width": 6,
+      "sweep_width": 5,
+      "sweep_fill": true,
+      "contact_flash_radius": 12,
+      "active_parry_halo": "red/white, exact parryActive ticks only"
+    }
+  },
+  "preserved_contracts": {
+    "fixed_hz": 60,
+    "light_timeline": "12/4/16",
+    "heavy_timeline": "24/6/24",
+    "parry_active_ticks": 3,
+    "parry_break_ticks": 60,
+    "roll_invulnerable_ticks": 8,
+    "dash_invulnerable": false,
+    "camera_zoom": 0.84,
+    "camera_shake": false
+  },
+  "verification": {
+    "tests": "69/69 PASS",
+    "prior_regression": "65/65 PASS",
+    "new_parry_visibility_tests": "4/4 PASS",
+    "countdown_contact_tick_sync": "PASS",
+    "three_tick_red_authority": "PASS",
+    "faster_movement_bounds_and_resources": "PASS",
+    "lint": "PASS",
+    "production_build": "PASS",
+    "production_http_status": 200,
+    "production_asset": "assets/index-BSerhFSO.js",
+    "served_markers": ["WINDUP", "READY", "LMB!", "PARRY BREAK"],
+    "git_diff_check": "PASS",
+    "staged_files": 0,
+    "scripted_replay_ticks": 1200,
+    "scripted_replay_elapsed_ms": 5.70
+  },
+  "browser": {
+    "production_http": "OBSERVED_200",
+    "manual_visual_readability": "NOT_OBSERVED",
+    "fps": "NOT_MEASURED",
+    "frame_time": "NOT_MEASURED"
+  },
+  "protected_game_p0i_evidence_sha256": "C5C8DAB5C0C78F2CAF6F9F04426BBA16ABBB0E9378255D0801F785D56F55607B",
+  "followup_task_prepared": null,
+  "followup_executed": false
+}

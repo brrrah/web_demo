@@ -1,0 +1,68 @@
+{
+  "task_id": "GAME-P0D",
+  "title": "Feint & Counterplay Graybox",
+  "result": "PASS",
+  "implementation": {
+    "input": "Q",
+    "authority": "60 Hz fixed combat tick",
+    "legal_cancel_phase": "attack startup before commitment only",
+    "damage_from_feint": false,
+    "explicit_state": "feintRecovery",
+    "procedural_pose": "windup reversal returning toward guard",
+    "render_callback_adjudication": false,
+    "attack_instance_identity_safe": true
+  },
+  "feint_contract": {
+    "earliest_frame": 4,
+    "commitment_buffer_ticks": 2,
+    "recovery_ticks": 16,
+    "cooldown_ticks": 30,
+    "light_commitment_frame": 10,
+    "heavy_commitment_frame": 22,
+    "delayed_heavy_commitment_frame": 30
+  },
+  "preserved_contracts": {
+    "fixed_hz": 60,
+    "light_attack": "12 startup / 4 active / 16 recovery / -72 to 66 degree sweep",
+    "heavy_attack": "24 startup / 6 active / 24 recovery / -98 to 96 degree sweep",
+    "delayed_heavy_contact_shift_ticks": 8,
+    "parry_active_ticks": 3,
+    "parried_attacker_stun_ticks": 24,
+    "dodge_invulnerable_ticks": 8,
+    "dodge_charges": 2,
+    "dodge_recharge_ticks": 90,
+    "per_attack_target_deduplication": true
+  },
+  "verification": {
+    "tests": "25/25 PASS",
+    "game_p0a_regression": "9/9 PASS",
+    "game_p0c_motion_regression": "8/8 PASS",
+    "game_p0d_feint_tests": "8/8 PASS",
+    "legal_startup_cancel_no_hit": "PASS",
+    "early_and_committed_cancel_rejection": "PASS",
+    "punishable_recovery": "PASS",
+    "cooldown_action_lock": "PASS",
+    "attack_instance_identity": "PASS",
+    "fixed_input_render_batch_determinism": "PASS",
+    "readable_pose_mapping": "PASS",
+    "lint": "PASS",
+    "production_build": "PASS",
+    "git_diff_check": "PASS",
+    "scripted_replay_ticks": 1200,
+    "scripted_replay_elapsed_ms": 2.81,
+    "production_bundle_kb": 1230.42,
+    "production_bundle_gzip_kb": 339.71
+  },
+  "browser": {
+    "automation": "NOT_OBSERVED",
+    "human_manual_readability": "NOT_OBSERVED",
+    "fps": "NOT_MEASURED",
+    "frame_time": "NOT_MEASURED",
+    "owner_task": "GAME-P0B",
+    "blocker_preserved": "WINDOWS_SANDBOX_ACL"
+  },
+  "protected_game_p0a_evidence_sha256": "F7E7F13CCF1A5745C09F0E098833AE4397AA1D2F58B53891C9D5EE17F01BA6C8",
+  "protected_game_p0c_evidence_sha256": "76B50782273E6CB73B53181183CE1E320FCE506724183F7A453D3F3B792A9CF5",
+  "followup_task_prepared": "GAME-P0E",
+  "followup_executed": false
+}
