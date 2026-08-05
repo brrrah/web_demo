@@ -1,0 +1,84 @@
+{
+  "task_id": "GAME-P0I",
+  "title": "Wider Combat View & Speed Feel",
+  "authorization": "Direct user request for a wider field of view and faster-feeling characters.",
+  "result": "PASS",
+  "implementation": {
+    "camera": {
+      "logical_viewport": [960, 600],
+      "world_zoom": 0.84,
+      "visible_world": [1142.857142857, 714.285714286],
+      "additional_visible_ratio": 1.1904761905,
+      "world_center": [480, 300],
+      "ui_camera_separate": true,
+      "mouse_aim_uses_main_world_camera": true,
+      "responsive_scale": "FIT and CENTER_BOTH"
+    },
+    "movement": {
+      "speed_xy": [4.4, 3.75],
+      "acceleration": 4.8,
+      "deceleration": 2.8,
+      "diagonal_normalized": true,
+      "movement_ghosts": 1,
+      "movement_ground_streak": true
+    },
+    "ground_dash": {
+      "speed_per_tick": 12,
+      "duration_ticks": 6,
+      "distance": 72,
+      "invulnerable": false,
+      "ghosts": 3,
+      "stronger_ground_streak": true
+    },
+    "roll": {
+      "speed_per_tick": 8.2,
+      "invulnerable_center_ticks": 8,
+      "resource_contract_changed": false
+    },
+    "attack_momentum": {
+      "light_distance": 10,
+      "heavy_distance": 13,
+      "tracking_added": false,
+      "whiff_recovery_changed": false
+    }
+  },
+  "preserved_contracts": {
+    "fixed_hz": 60,
+    "light_timeline": "12/4/16",
+    "heavy_timeline": "24/6/24",
+    "parry_active_ticks": 3,
+    "parry_break_ticks": 60,
+    "roll_invulnerable_ticks": 8,
+    "dash_duration_ticks": 6,
+    "dash_invulnerable": false,
+    "camera_shake": false
+  },
+  "verification": {
+    "tests": "65/65 PASS",
+    "prior_regression": "61/61 PASS",
+    "new_view_feel_tests": "4/4 PASS",
+    "wide_world_view_math": "PASS",
+    "movement_response_braking_diagonal": "PASS",
+    "dash_distance_bounds_non_invulnerability": "PASS",
+    "timing_contract_preservation": "PASS",
+    "lint": "PASS",
+    "production_build": "PASS",
+    "production_http_status": 200,
+    "production_asset": "assets/index-Bh8i5UP7.js",
+    "served_bundle_contains_wide_view_data": true,
+    "served_bundle_preserves_parry_break": true,
+    "git_diff_check": "PASS",
+    "staged_files": 0,
+    "scripted_replay_ticks": 1200,
+    "scripted_replay_elapsed_ms": 4.73
+  },
+  "browser": {
+    "production_http": "OBSERVED_200",
+    "manual_visual_feel": "NOT_OBSERVED",
+    "fps": "NOT_MEASURED",
+    "frame_time": "NOT_MEASURED"
+  },
+  "protected_game_p0h_evidence_sha256": "3B2E3C0E7990ACE7EF07972B6F6E96C43EC05EE2684FD039D60C8177836E0335",
+  "followup_task_prepared": null,
+  "followup_executed": false
+}
