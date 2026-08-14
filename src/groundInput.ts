@@ -27,6 +27,14 @@ const createTapState = (): Record<MoveKey, TapState> => ({
   D: { firstDownTick: null, released: false },
 });
 
+export function composeDashDirection(base: GroundDirection, heldMove: GroundDirection): GroundDirection {
+  const perpendicular = Math.abs(base.x) > 0 ? Math.sign(heldMove.y) : Math.sign(heldMove.x);
+  if (perpendicular === 0) return { ...base };
+  const x = base.x === 0 ? perpendicular : base.x;
+  const y = base.y === 0 ? perpendicular : base.y;
+  const length = Math.hypot(x, y);
+  return { x: x / length, y: y / length };
+}
 export class DoubleTapDashDetector {
   private taps = createTapState();
 
