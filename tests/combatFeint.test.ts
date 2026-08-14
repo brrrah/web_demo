@@ -89,6 +89,6 @@ describe('GAME-P0D deterministic feint and counterplay', () => {
     expect(ATTACKS.light).toMatchObject({ startup: 12, active: 4, sweepStartAngle: -72 * Math.PI / 180, sweepEndAngle: 66 * Math.PI / 180 });
     expect(ATTACKS.heavy).toMatchObject({ startup: 24, active: 6, sweepStartAngle: -98 * Math.PI / 180, sweepEndAngle: 96 * Math.PI / 180 });
     expect(PARRY.active).toBe(3); expect(PARRY.attackerStun).toBe(60);
-    expect(DODGE.invulnerable).toBe(8); expect(DODGE.charges).toBe(2); expect(DODGE.recharge).toBe(90);
+    expect(DODGE.invulnerable).toBe(8); expect(DODGE.charges).toBe(2); expect(DODGE.recharge).toBe(108);
   });
 });

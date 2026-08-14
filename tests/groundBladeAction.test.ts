@@ -123,7 +123,7 @@ describe('GAME-P0F ground input and unified blade action', () => {
     sim.step(input({ dodge: true, move: { x: 1, y: 0 } }), aiIdle);
     expect(sim.player.dodgeCharges).toBe(1);
     expect(DODGE.invulnerable).toBe(8);
-    expect(DODGE.recharge).toBe(90);
+    expect(DODGE.recharge).toBe(108);
 
     const facingFallback = new CombatSimulation(); ready(facingFallback);
     facingFallback.player.facing = { x: -1, y: 0 };

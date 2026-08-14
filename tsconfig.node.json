@@ -11,5 +11,5 @@
     "strict": true,
     "types": ["node"]
   },
-  "include": ["vite.config.ts", "eslint.config.js", "tests", "src/aimAssist.ts", "src/combat.ts", "src/combatData.ts", "src/combatMotion.ts", "src/combatTelegraph.ts", "src/groundInput.ts", "src/presentationData.ts"]
+  "include": ["vite.config.ts", "eslint.config.js", "tests", "src/aimAssist.ts", "src/characterProfiles.ts", "src/combat.ts", "src/combatData.ts", "src/combatMotion.ts", "src/combatTelegraph.ts", "src/groundInput.ts", "src/presentationData.ts", "src/playerLoadout.ts", "src/authSession.ts", "src/healthHud.ts"]
 }
